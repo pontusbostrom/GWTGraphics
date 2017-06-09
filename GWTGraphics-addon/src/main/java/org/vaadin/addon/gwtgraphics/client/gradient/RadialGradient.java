@@ -6,7 +6,7 @@ import com.google.gwt.dom.client.Element;
 
 public class RadialGradient extends Gradient {
 
-	private double cx, cy, fx, fy, radius;
+	protected double cx, cy, fx, fy, radius;
 
 	public RadialGradient() {
 	}

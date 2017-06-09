@@ -76,12 +76,12 @@ import com.google.gwt.user.client.ui.Widget;
 public class DrawingArea extends Widget
 implements VectorObjectContainer, HasClickHandlers, HasAllMouseHandlers, HasDoubleClickHandlers {
 
-	private static final SVGImpl impl = GWT.create(SVGImpl.class);
+	protected static final SVGImpl impl = GWT.create(SVGImpl.class);
 
-	private final Element root;
+	protected final Element root;
 
-	private List<VectorObject> childrens = new ArrayList<VectorObject>();
-	private List<Definition> definitions = new ArrayList<Definition>();
+	protected List<VectorObject> childrens = new ArrayList<VectorObject>();
+	protected List<Definition> definitions = new ArrayList<Definition>();
 
 	/**
 	 * Creates a DrawingArea of given width and height.

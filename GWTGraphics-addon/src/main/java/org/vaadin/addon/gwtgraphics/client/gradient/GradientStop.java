@@ -6,10 +6,10 @@ import com.google.gwt.dom.client.Element;
 
 public class GradientStop{
 
-	private double offset = 0;
-	private double opacity = 1.0;
-	private String color = "";
-	private String className = "";
+	protected double offset = 0;
+	protected double opacity = 1.0;
+	protected String color = "";
+	protected String className = "";
 
 	public GradientStop() {
 		this(0, 1.0, "white");

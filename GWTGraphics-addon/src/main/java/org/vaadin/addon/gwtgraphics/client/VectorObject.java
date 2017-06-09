@@ -61,27 +61,27 @@ import com.google.gwt.user.client.ui.Widget;
 public abstract class VectorObject extends Widget implements HasClickHandlers,
 HasAllMouseHandlers, HasDoubleClickHandlers, Animatable {
 
-	private static final SVGImpl impl = GWT.create(SVGImpl.class);
+	protected static final SVGImpl impl = GWT.create(SVGImpl.class);
 
-	private static enum FillType {
+	protected static enum FillType {
 		SOLID, GRADIENT
 	}
 
-	private Widget parent;
+	protected Widget parent;
 
-	private Map<String, String> properties;
+	protected Map<String, String> properties;
 
-	private Stroke stroke;
-	private Fill fill;
-	private FillType fillType;
-	private Gradient fillGradient;
-	private MatrixTransform transform;
+	protected Stroke stroke;
+	protected Fill fill;
+	protected FillType fillType;
+	protected Gradient fillGradient;
+	protected MatrixTransform transform;
 
-	private double width, height;
-	private double posX, posY;
-	private double scaleX, scaleY;
-	private double rotation;
-	private boolean transformDirty;
+	protected double width, height;
+	protected double posX, posY;
+	protected double scaleX, scaleY;
+	protected double rotation;
+	protected boolean transformDirty;
 
 	public VectorObject() {
 		setElement(impl.createElement(getType()));
@@ -101,7 +101,7 @@ HasAllMouseHandlers, HasDoubleClickHandlers, Animatable {
 		transformDirty = true;
 	}
 
-	private MatrixTransform getTransform() {
+	protected MatrixTransform getTransform() {
 		if(transformDirty) {
 
 			double rot = Math.toRadians(rotation);

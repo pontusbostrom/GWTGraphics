@@ -10,7 +10,7 @@ import com.google.gwt.dom.client.Element;
 
 public class FilterEffect {
 
-	private static int INSTANCE_COUNT = 0;
+	protected static int INSTANCE_COUNT = 0;
 
 	public static enum InputSource {
 		SOURCE_GRAPHIC ("SourceGraphic"),
@@ -29,10 +29,10 @@ public class FilterEffect {
 
 	}
 
-	private Map<String, String> parameters;
-	private InputSource inputSource = InputSource.SOURCE_GRAPHIC;
-	private String id;
-	private String tag;
+	protected Map<String, String> parameters;
+	protected InputSource inputSource = InputSource.SOURCE_GRAPHIC;
+	protected String id;
+	protected String tag;
 
 	public FilterEffect(String tag) {
 		this.tag = tag;

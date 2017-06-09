@@ -10,11 +10,11 @@ import com.google.gwt.dom.client.Element;
 
 public class Filter implements Definition{
 
-	private static int INSTANCE_COUNT = 0;
+	protected static int INSTANCE_COUNT = 0;
 
-	private FilterEffectGroup effects;
-	private String id;
-	private LinkedHashMap<String,String> parameters;
+	protected FilterEffectGroup effects;
+	protected String id;
+	protected LinkedHashMap<String,String> parameters;
 
 	public Filter() {
 		id = "filter_" + (++INSTANCE_COUNT);

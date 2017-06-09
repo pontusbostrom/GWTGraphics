@@ -135,7 +135,7 @@ public class SVGImpl {
 		setXY(element, false, y, attached);
 	}
 
-	private void setXY(final Element element, boolean x, final int value,
+	protected void setXY(final Element element, boolean x, final int value,
 			final boolean attached) {
 		if ( element.getTagName().toLowerCase().equals("g")){
 			int other = x ? getY(element) : getX(element);
@@ -175,7 +175,7 @@ public class SVGImpl {
 		}
 	}
 
-	private String getPosAttribute(Element element, boolean x) {
+	protected String getPosAttribute(Element element, boolean x) {
 		String tagName = element.getTagName();
 		String attr = "";
 		if (tagName.equals("rect") || tagName.equals("text")
@@ -191,7 +191,7 @@ public class SVGImpl {
 		return attr;
 	}
 
-	private MatchResult getTranslation(Element e){
+	protected MatchResult getTranslation(Element e){
 		String xform = e.getAttribute("transform");
 		return xform != null ? RegExp.compile("translate\\(\\s*(\\d+)\\s*(,\\s*(\\d+))?\\s*\\)","i").exec(xform) : null;
 	}
@@ -313,7 +313,7 @@ public class SVGImpl {
 		element.getAttribute("d").concat(path.toString());
 	}
 
-	private void appendPathStep(StringBuilder path, PathStep step) {
+	protected void appendPathStep(StringBuilder path, PathStep step) {
 		if (step instanceof Arc) {
 			Arc arc = (Arc) step;
 			path.append(arc.isRelativeCoords() ? " a" : " A");
@@ -459,7 +459,7 @@ public class SVGImpl {
 		});
 	}
 
-	private void setRotateTransform(Element element, int degree,
+	protected void setRotateTransform(Element element, int degree,
 			boolean attached) {
 		SVGBBox box = SVGUtil.getBBBox(element, attached);
 		int x = box.getX() + box.getWidth() / 2;

@@ -20,13 +20,13 @@ import java.util.List;
 
 /**
  * Group is a container, which can contain one or more VectorObjects.
- * 
+ *
  * @author Henri Kerola
- * 
+ *
  */
 public class Group extends VectorObject implements VectorObjectContainer {
 
-	private List<VectorObject> children = new ArrayList<VectorObject>();
+	protected List<VectorObject> children = new ArrayList<VectorObject>();
 
 	/**
 	 * Creates an empty Group.
@@ -41,7 +41,7 @@ public class Group extends VectorObject implements VectorObjectContainer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.vaadin.gwtgraphics.client.VectorObjectContainer#add(org.vaadin.
 	 * gwtgraphics.client.VectorObject)
 	 */
@@ -54,7 +54,7 @@ public class Group extends VectorObject implements VectorObjectContainer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.vaadin.gwtgraphics.client.VectorObjectContainer#insert(org.vaadin
 	 * .gwtgraphics.client.VectorObject, int)
@@ -78,7 +78,7 @@ public class Group extends VectorObject implements VectorObjectContainer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.vaadin.gwtgraphics.client.VectorObjectContainer#remove(org.vaadin
 	 * .gwtgraphics.client.VectorObject)
@@ -95,7 +95,7 @@ public class Group extends VectorObject implements VectorObjectContainer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.vaadin.gwtgraphics.client.VectorObjectContainer#bringToFront(org.
 	 * vaadin.gwtgraphics.client.VectorObject)
@@ -110,20 +110,20 @@ public class Group extends VectorObject implements VectorObjectContainer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.vaadin.gwtgraphics.client.VectorObjectContainer#clear()
 	 */
 	public void clear() {
 		List<VectorObject> childrensCopy = new ArrayList<VectorObject>();
 		childrensCopy.addAll(children);
 		for (VectorObject vo : childrensCopy) {
-			this.remove(vo);
+			remove(vo);
 		}
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.vaadin.gwtgraphics.client.VectorObjectContainer#getVectorObject(int)
 	 */
@@ -133,7 +133,7 @@ public class Group extends VectorObject implements VectorObjectContainer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.vaadin.gwtgraphics.client.VectorObjectContainer#getVectorObjectCount
 	 * ()
@@ -144,7 +144,7 @@ public class Group extends VectorObject implements VectorObjectContainer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.google.gwt.user.client.ui.Widget#doAttachChildren()
 	 */
 	@Override
@@ -156,7 +156,7 @@ public class Group extends VectorObject implements VectorObjectContainer {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.google.gwt.user.client.ui.Widget#doDetachChildren()
 	 */
 	@Override
@@ -165,7 +165,7 @@ public class Group extends VectorObject implements VectorObjectContainer {
 			vo.onDetach();
 		}
 	}
-	
+
 	@Override
 	public String getSVGElementName() {
 		return "g";

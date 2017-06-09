@@ -17,21 +17,21 @@ package org.vaadin.addon.gwtgraphics.client.shape.path;
 
 /**
  * This class represents an arc step.
- * 
+ *
  * @author Henri Kerola
- * 
+ *
  */
 public class Arc extends LineTo {
 
-	private double rx;
+	protected double rx;
 
-	private double ry;
+	protected double ry;
 
-	private double xAxisRotation;
+	protected double xAxisRotation;
 
-	private boolean largeArc;
+	protected boolean largeArc;
 
-	private boolean sweep;
+	protected boolean sweep;
 
 	public Arc(boolean relativeCoords, double rx, double ry, double xAxisRotation,
 			boolean largeArc, boolean sweep, double x, double y) {
@@ -63,7 +63,7 @@ public class Arc extends LineTo {
 	public boolean isSweep() {
 		return sweep;
 	}
-	
+
 	public void setRx(int rx) {
 		this.rx = rx;
 	}
@@ -90,7 +90,7 @@ public class Arc extends LineTo {
 				+ getxAxisRotation() + " " + (isLargeArc() ? "1" : "0") + ","
 				+ (isSweep() ? "1" : "0") + " " + getX() + "," + getY();
 	}
-	
+
 	@Override
 	public Arc cloneStep() {
 		return new Arc(relativeCoords, rx, ry, xAxisRotation, largeArc, sweep, x, y);

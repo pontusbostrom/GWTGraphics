@@ -30,7 +30,7 @@ import com.google.gwt.dom.client.Element;
  */
 public abstract class Shape extends VectorObject {
 
-	private Filter filter;
+	protected Filter filter;
 
 	public Filter getFilter() {
 		return filter;

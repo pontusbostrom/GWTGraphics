@@ -19,14 +19,14 @@ public class Stroke {
 		BEVEL
 	}
 
-	private List<Double> dashArray = null;
-	private LineCap lineCap = null;
-	private LineJoin lineJoin = null;
-	private String color;
-	private double width = 1.0;
-	private double miterLimit = 4.0;
-	private double dashOffset = 0.0;
-	private double opacity = 1.0;
+	protected List<Double> dashArray = null;
+	protected LineCap lineCap = null;
+	protected LineJoin lineJoin = null;
+	protected String color;
+	protected double width = 1.0;
+	protected double miterLimit = 4.0;
+	protected double dashOffset = 0.0;
+	protected double opacity = 1.0;
 
 	public Stroke() {
 		this("black");

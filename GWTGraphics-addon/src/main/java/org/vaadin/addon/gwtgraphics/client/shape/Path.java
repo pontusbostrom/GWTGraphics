@@ -73,16 +73,16 @@ public class Path extends Shape implements Cloneable {
 	/**
 	 * Defines which drawing type is used when changing path. Default is AUTO.
 	 */
-	private RedrawType redrawingType = RedrawType.AUTO;
+	protected RedrawType redrawingType = RedrawType.AUTO;
 
 	/**
 	 * Defines if deffered redraw was issued.
 	 */
-	private boolean deferredDrawPending = false;
+	protected boolean deferredDrawPending = false;
 
 	protected final List<PathStep> steps;
 
-	private boolean antialias = true;
+	protected boolean antialias = true;
 
 
 	/**
@@ -116,6 +116,7 @@ public class Path extends Shape implements Cloneable {
 	 *
 	 * @return a cloned Path
 	 */
+	@Override
 	public Path clone() {
 		int length = steps.size();
 		Path p = new Path(length);
@@ -430,7 +431,7 @@ public class Path extends Shape implements Cloneable {
 	}
 
 	// TODO, XXX: get rid of this crap
-	private void drawPathDeferred() {
+	protected void drawPathDeferred() {
 		if (!deferredDrawPending) {
 			deferredDrawPending = true;
 			Scheduler.get().scheduleFinally(new ScheduledCommand() {

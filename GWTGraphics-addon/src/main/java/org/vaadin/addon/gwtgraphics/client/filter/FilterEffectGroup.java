@@ -10,7 +10,7 @@ import com.google.gwt.dom.client.Element;
 
 public class FilterEffectGroup {
 
-	private final Set<FilterEffect> effects;
+	protected final Set<FilterEffect> effects;
 
 	public FilterEffectGroup() {
 		effects = new LinkedHashSet<FilterEffect>();

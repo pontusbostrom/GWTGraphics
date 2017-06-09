@@ -22,9 +22,9 @@ import com.google.gwt.dom.client.NodeList;
 
 /**
  * This class contains helpers used by the VMLImpl class.
- * 
+ *
  * @author Henri Kerola
- * 
+ *
  */
 public abstract class VMLUtil {
 
@@ -63,7 +63,7 @@ public abstract class VMLUtil {
 		return e != null;
 	}
 
-	private static Element getChildElementWithTagName(Element element,
+	protected static Element getChildElementWithTagName(Element element,
 			String name) {
 		NodeList<Node> nodes = element.getChildNodes();
 		for (int i = 0; i < nodes.getLength(); i++) {

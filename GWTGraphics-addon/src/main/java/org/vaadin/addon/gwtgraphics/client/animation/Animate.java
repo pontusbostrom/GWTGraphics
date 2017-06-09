@@ -16,7 +16,6 @@
 package org.vaadin.addon.gwtgraphics.client.animation;
 
 import com.google.gwt.animation.client.Animation;
-import com.google.gwt.core.client.GWT;
 
 /**
  * This class can be used to animate classes implementing the Animatable
@@ -27,17 +26,17 @@ import com.google.gwt.core.client.GWT;
  */
 public class Animate {
 
-	private Animatable target;
+	protected Animatable target;
 
-	private String property;
+	protected String property;
 
-	private double startValue;
+	protected double startValue;
 
-	private double endValue;
+	protected double endValue;
 
-	private int duration;
+	protected int duration;
 
-	private Animation animation = new Animation() {
+	protected Animation animation = new Animation() {
 
 		@Override
 		protected void onUpdate(double progress) {

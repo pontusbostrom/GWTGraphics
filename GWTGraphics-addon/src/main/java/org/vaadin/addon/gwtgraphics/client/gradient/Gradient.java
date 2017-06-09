@@ -6,18 +6,13 @@ import java.util.Map;
 import java.util.Set;
 
 import org.vaadin.addon.gwtgraphics.client.Definition;
-import org.vaadin.addon.gwtgraphics.client.impl.SVGImpl;
 import org.vaadin.addon.gwtgraphics.client.transform.Transform;
-
-import com.google.gwt.core.client.GWT;
 
 /**
  * Base gradient class
  */
 public abstract class Gradient implements Definition{
 
-
-	private static final SVGImpl impl = GWT.create(SVGImpl.class);
 
 	public static enum GradientUnits {
 		USER_SPACE_ON_USE, OBJECT_BOUNDING_BOX
@@ -27,12 +22,12 @@ public abstract class Gradient implements Definition{
 		PAD, REFLECT, REPEAT
 	}
 
-	private static int INSTANCE_COUNTER = 0;
+	protected static int INSTANCE_COUNTER = 0;
 
-	private String id;
-	private Set<GradientStop> stops;
-	private Map<String, String> parameters;
-	private Transform transform;
+	protected String id;
+	protected Set<GradientStop> stops;
+	protected Map<String, String> parameters;
+	protected Transform transform;
 
 	public Gradient() {
 		id = "gradient_" + (++INSTANCE_COUNTER);

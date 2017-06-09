@@ -6,7 +6,7 @@ import com.google.gwt.dom.client.Element;
 
 public class LinearGradient extends Gradient {
 
-	private double x0, y0, x1, y1;
+	protected double x0, y0, x1, y1;
 
 	public LinearGradient() {
 		this(0,0,1,1);

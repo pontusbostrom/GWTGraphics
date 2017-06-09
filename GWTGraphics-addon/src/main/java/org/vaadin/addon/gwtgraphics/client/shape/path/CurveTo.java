@@ -19,13 +19,13 @@ package org.vaadin.addon.gwtgraphics.client.shape.path;
  * This class represents Path's curveto step. Draws a cubic bezier curve from
  * the current point to (x, y). (x1, y1) is the control point for the beginning
  * of the curve. (x2, y2) is the control point for the end of the curve.
- * 
+ *
  * @author Henri Kerola
- * 
+ *
  */
 public class CurveTo extends LineTo {
 
-	private double x1, y1, x2, y2;
+	protected double x1, y1, x2, y2;
 
 	public CurveTo(boolean relativeCoords, double x1, double y1, double x2, double y2,
 			double x, double y) {
@@ -81,7 +81,7 @@ public class CurveTo extends LineTo {
 		return isRelativeCoords() ? "c" : "C" + getX1() + " " + getY1() + " "
 				+ getX2() + " " + getY2() + " " + getX() + " " + getY();
 	}
-	
+
 	@Override
 	public CurveTo cloneStep() {
 		return new CurveTo(relativeCoords, x1, y1, x2, y2, x, y);

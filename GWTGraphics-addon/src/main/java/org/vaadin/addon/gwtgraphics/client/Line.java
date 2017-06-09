@@ -20,18 +20,18 @@ import org.vaadin.addon.gwtgraphics.client.animation.Animatable;
 /**
  * Line represents a straight line from one point to another. Line can be
  * stroked.
- * 
+ *
  * @author Henri Kerola
- * 
+ *
  */
 public class Line extends VectorObject implements Animatable {
 
-	private double x0, y0, x1, y1;
-	
+	protected double x0, y0, x1, y1;
+
 	/**
 	 * Creates a new instance of Line. This is a line from one given point to
 	 * another. Default stroke width is 1px and stroke color is black.
-	 * 
+	 *
 	 * @param x1
 	 *            the x-coordinate of the starting point in pixels
 	 * @param y1
@@ -45,7 +45,7 @@ public class Line extends VectorObject implements Animatable {
 		setStartPosition(x1,y1);
 		setEndPosition(x2,y2);
 	}
-	
+
 	public void setStartPosition(double x, double y) {
 		x0 = x;
 		y0 = y;
@@ -53,15 +53,15 @@ public class Line extends VectorObject implements Animatable {
 		setProperty("y1", y);
 		redraw();
 	}
-	
+
 	public double getX0() {
 		return x0;
 	}
-	
+
 	public double getY0() {
 		return y0;
 	}
-	
+
 	public void setEndPosition(double x, double y) {
 		x1 = x;
 		y1 = y;
@@ -69,11 +69,11 @@ public class Line extends VectorObject implements Animatable {
 		setProperty("y2", y);
 		redraw();
 	}
-	
+
 	public double getX1() {
 		return x1;
 	}
-	
+
 	public double getY1() {
 		return y1;
 	}
@@ -87,5 +87,5 @@ public class Line extends VectorObject implements Animatable {
 	public String getSVGElementName() {
 		return "line";
 	}
-	
+
 }
